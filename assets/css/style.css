@@ -1,0 +1,347 @@
+/*
+ * RentO - Custom Stylesheet
+ * ===========================
+ * This file adds custom styles on top of Bootstrap 5.
+ * We keep it simple — just enough to make the site look polished.
+ *
+ * Colour scheme:
+ *   Primary blue:   #2563EB  (used for navbar, buttons, accents)
+ *   Dark:           #1E293B  (footer, dark backgrounds)
+ *   Light grey:     #F1F5F9  (page background)
+ *   White:          #FFFFFF  (cards, content areas)
+ *   Accent green:   #16A34A  (success states)
+ *   Accent red:     #DC2626  (danger states)
+ */
+
+
+/* ======================================================
+   1. GLOBAL / BASE STYLES
+   ====================================================== */
+
+/* Override Bootstrap's primary colour to our blue */
+:root {
+    --bs-primary: #2563EB;
+    --bs-primary-rgb: 37, 99, 235;
+}
+
+body {
+    background-color: #F1F5F9;           /* Light grey page background */
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    min-height: 100vh;                   /* Full viewport height */
+    display: flex;
+    flex-direction: column;              /* Push footer to the bottom */
+}
+
+/* The main content area should grow to fill available space */
+.container.mt-4 {
+    flex: 1;
+}
+
+
+/* ======================================================
+   2. NAVBAR
+   ====================================================== */
+
+.navbar {
+    background: linear-gradient(135deg, #2563EB 0%, #1D4ED8 100%) !important;
+}
+
+.navbar-brand {
+    font-size: 1.4rem;
+    letter-spacing: 0.5px;
+}
+
+.navbar-brand i {
+    margin-right: 4px;
+}
+
+.nav-link {
+    font-weight: 500;
+    transition: opacity 0.2s ease;
+}
+
+.nav-link:hover {
+    opacity: 0.85;
+}
+
+
+/* ======================================================
+   3. FOOTER
+   ====================================================== */
+
+.footer {
+    background-color: #1E293B !important;
+    margin-top: auto;                    /* Stick to bottom */
+    font-size: 0.9rem;
+}
+
+
+/* ======================================================
+   4. LOGIN PAGE
+   ====================================================== */
+
+/* Centres the login form on the page */
+.login-wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 70vh;
+}
+
+.login-card {
+    width: 100%;
+    max-width: 420px;
+    border: none;
+    border-radius: 12px;
+    box-shadow: 0 4px 24px rgba(0, 0, 0, 0.08);
+}
+
+.login-card .card-header {
+    background: linear-gradient(135deg, #2563EB 0%, #1D4ED8 100%);
+    color: white;
+    text-align: center;
+    border-radius: 12px 12px 0 0 !important;
+    padding: 1.5rem;
+}
+
+.login-card .card-header h4 {
+    margin: 0;
+    font-weight: 700;
+}
+
+.login-card .card-body {
+    padding: 2rem;
+}
+
+
+/* ======================================================
+   5. CARDS (Dashboard, Equipment, etc.)
+   ====================================================== */
+
+.card {
+    border: none;
+    border-radius: 10px;
+    box-shadow: 0 2px 12px rgba(0, 0, 0, 0.06);
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.card:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+}
+
+.card-header {
+    font-weight: 600;
+    border-bottom: 1px solid #E2E8F0;
+}
+
+/* Dashboard stat cards */
+.stat-card {
+    text-align: center;
+    padding: 1.5rem;
+}
+
+.stat-card .stat-number {
+    font-size: 2.5rem;
+    font-weight: 700;
+    color: #2563EB;
+}
+
+.stat-card .stat-label {
+    font-size: 0.95rem;
+    color: #64748B;
+    margin-top: 0.25rem;
+}
+
+.stat-card i {
+    font-size: 2rem;
+    color: #2563EB;
+    margin-bottom: 0.5rem;
+}
+
+
+/* ======================================================
+   6. TABLES
+   ====================================================== */
+
+.table {
+    border-radius: 8px;
+    overflow: hidden;
+}
+
+.table thead th {
+    background-color: #2563EB;
+    color: white;
+    border: none;
+    font-weight: 600;
+    font-size: 0.9rem;
+    padding: 0.75rem 1rem;
+}
+
+.table tbody tr {
+    transition: background-color 0.15s ease;
+}
+
+.table tbody tr:hover {
+    background-color: #EFF6FF;
+}
+
+.table td {
+    vertical-align: middle;
+    padding: 0.75rem 1rem;
+}
+
+
+/* ======================================================
+   7. FORMS
+   ====================================================== */
+
+.form-control:focus,
+.form-select:focus {
+    border-color: #2563EB;
+    box-shadow: 0 0 0 0.2rem rgba(37, 99, 235, 0.15);
+}
+
+.form-label {
+    font-weight: 500;
+    color: #334155;
+    margin-bottom: 0.35rem;
+}
+
+/* Nice spacing for form groups */
+.mb-3 .form-control,
+.mb-3 .form-select {
+    padding: 0.6rem 0.85rem;
+}
+
+
+/* ======================================================
+   8. BUTTONS
+   ====================================================== */
+
+.btn-primary {
+    background: linear-gradient(135deg, #2563EB 0%, #1D4ED8 100%);
+    border: none;
+    font-weight: 500;
+    padding: 0.5rem 1.25rem;
+    transition: opacity 0.2s ease, transform 0.15s ease;
+}
+
+.btn-primary:hover {
+    opacity: 0.9;
+    transform: translateY(-1px);
+}
+
+.btn-outline-primary {
+    border-color: #2563EB;
+    color: #2563EB;
+    font-weight: 500;
+}
+
+.btn-outline-primary:hover {
+    background-color: #2563EB;
+    border-color: #2563EB;
+}
+
+
+/* ======================================================
+   9. BADGES (status labels)
+   ====================================================== */
+
+.badge {
+    font-weight: 500;
+    padding: 0.4em 0.7em;
+    font-size: 0.8rem;
+}
+
+/* Custom status badges for rental states */
+.badge-available {
+    background-color: #16A34A;
+    color: white;
+}
+
+.badge-rented {
+    background-color: #F59E0B;
+    color: white;
+}
+
+.badge-overdue {
+    background-color: #DC2626;
+    color: white;
+}
+
+.badge-returned {
+    background-color: #64748B;
+    color: white;
+}
+
+
+/* ======================================================
+   10. PAGE HEADERS
+   ====================================================== */
+
+.page-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 1.5rem;
+    padding-bottom: 0.75rem;
+    border-bottom: 2px solid #E2E8F0;
+}
+
+.page-header h2 {
+    font-weight: 700;
+    color: #1E293B;
+    margin: 0;
+}
+
+
+/* ======================================================
+   11. ALERTS / FLASH MESSAGES
+   ====================================================== */
+
+.alert {
+    border: none;
+    border-radius: 8px;
+    font-weight: 500;
+}
+
+
+/* ======================================================
+   12. MISC / UTILITY
+   ====================================================== */
+
+/* Equipment image thumbnails */
+.equipment-img {
+    width: 80px;
+    height: 80px;
+    object-fit: cover;
+    border-radius: 8px;
+}
+
+/* Simple hover effect for clickable rows */
+.clickable-row {
+    cursor: pointer;
+}
+
+/* Empty state message */
+.empty-state {
+    text-align: center;
+    padding: 3rem 1rem;
+    color: #94A3B8;
+}
+
+.empty-state i {
+    font-size: 3rem;
+    margin-bottom: 1rem;
+}
+
+/* Search/filter bar */
+.search-bar {
+    max-width: 350px;
+}
+
+/* Smooth transitions for interactive elements */
+a, .btn, .card, .nav-link {
+    transition: all 0.2s ease;
+}
