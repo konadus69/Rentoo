@@ -1,16 +1,8 @@
 /*
  * RentO - Custom Stylesheet
  * ===========================
- * This file adds custom styles on top of Bootstrap 5.
- * We keep it simple — just enough to make the site look polished.
- *
- * Colour scheme:
- *   Primary blue:   #2563EB  (used for navbar, buttons, accents)
- *   Dark:           #1E293B  (footer, dark backgrounds)
- *   Light grey:     #F1F5F9  (page background)
- *   White:          #FFFFFF  (cards, content areas)
- *   Accent green:   #16A34A  (success states)
- *   Accent red:     #DC2626  (danger states)
+ * Custom styles on top of Bootstrap 5.
+ * Keeps things clean and simple.
  */
 
 
@@ -18,21 +10,15 @@
    1. GLOBAL / BASE STYLES
    ====================================================== */
 
-/* Override Bootstrap's primary colour to our blue */
-:root {
-    --bs-primary: #2563EB;
-    --bs-primary-rgb: 37, 99, 235;
-}
-
 body {
-    background-color: #F1F5F9;           /* Light grey page background */
+    background-color: #F0F2F5;
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    min-height: 100vh;                   /* Full viewport height */
+    min-height: 100vh;
     display: flex;
-    flex-direction: column;              /* Push footer to the bottom */
+    flex-direction: column;
+    color: #333;
 }
 
-/* The main content area should grow to fill available space */
 .container.mt-4 {
     flex: 1;
 }
@@ -43,25 +29,38 @@ body {
    ====================================================== */
 
 .navbar {
-    background: linear-gradient(135deg, #2563EB 0%, #1D4ED8 100%) !important;
+    background-color: #1a1a2e !important;
+    padding: 0.6rem 0;
 }
 
 .navbar-brand {
-    font-size: 1.4rem;
+    font-size: 1.3rem;
+    font-weight: 700;
     letter-spacing: 0.5px;
+    color: #fff !important;
 }
 
 .navbar-brand i {
-    margin-right: 4px;
+    color: #4DA8DA;
+    margin-right: 5px;
 }
 
 .nav-link {
     font-weight: 500;
-    transition: opacity 0.2s ease;
+    color: rgba(255,255,255,0.8) !important;
+    padding: 0.5rem 0.9rem !important;
+    border-radius: 6px;
+    margin: 0 2px;
+    font-size: 0.9rem;
 }
 
 .nav-link:hover {
-    opacity: 0.85;
+    color: #fff !important;
+    background-color: rgba(255,255,255,0.1);
+}
+
+.navbar .badge {
+    font-size: 0.7rem;
 }
 
 
@@ -70,9 +69,11 @@ body {
    ====================================================== */
 
 .footer {
-    background-color: #1E293B !important;
-    margin-top: auto;                    /* Stick to bottom */
-    font-size: 0.9rem;
+    background-color: #1a1a2e !important;
+    margin-top: auto;
+    font-size: 0.85rem;
+    color: rgba(255,255,255,0.6);
+    padding: 1rem 0;
 }
 
 
@@ -80,83 +81,101 @@ body {
    4. LOGIN PAGE
    ====================================================== */
 
-/* Centres the login form on the page */
 .login-wrapper {
     display: flex;
     justify-content: center;
     align-items: center;
-    min-height: 70vh;
+    min-height: 75vh;
 }
 
 .login-card {
     width: 100%;
-    max-width: 420px;
+    max-width: 400px;
     border: none;
-    border-radius: 12px;
-    box-shadow: 0 4px 24px rgba(0, 0, 0, 0.08);
+    border-radius: 16px;
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.12);
+    overflow: hidden;
 }
 
 .login-card .card-header {
-    background: linear-gradient(135deg, #2563EB 0%, #1D4ED8 100%);
+    background-color: #1a1a2e;
     color: white;
     text-align: center;
-    border-radius: 12px 12px 0 0 !important;
-    padding: 1.5rem;
+    border-radius: 0 !important;
+    padding: 2rem 1.5rem 1.5rem;
+    border-bottom: 3px solid #4DA8DA;
 }
 
 .login-card .card-header h4 {
     margin: 0;
     font-weight: 700;
+    font-size: 1.6rem;
+}
+
+.login-card .card-header h4 i {
+    color: #4DA8DA;
+}
+
+.login-card .card-header small {
+    color: rgba(255,255,255,0.65);
+    font-size: 0.85rem;
 }
 
 .login-card .card-body {
-    padding: 2rem;
+    padding: 2rem 1.8rem;
+    background: #fff;
+}
+
+.login-card .btn-primary {
+    background-color: #1a1a2e;
+    border: none;
+    padding: 0.65rem;
+    font-size: 1rem;
+    font-weight: 600;
+    border-radius: 8px;
+}
+
+.login-card .btn-primary:hover {
+    background-color: #16213e;
 }
 
 
 /* ======================================================
-   5. CARDS (Dashboard, Equipment, etc.)
+   5. CARDS
    ====================================================== */
 
 .card {
     border: none;
-    border-radius: 10px;
-    box-shadow: 0 2px 12px rgba(0, 0, 0, 0.06);
-    transition: transform 0.2s ease, box-shadow 0.2s ease;
+    border-radius: 12px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.06);
+    transition: box-shadow 0.2s ease;
 }
 
 .card:hover {
-    transform: translateY(-2px);
-    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.1);
 }
 
 .card-header {
     font-weight: 600;
-    border-bottom: 1px solid #E2E8F0;
+    border-bottom: 1px solid #eee;
 }
 
-/* Dashboard stat cards */
-.stat-card {
-    text-align: center;
-    padding: 1.5rem;
+.card-header.bg-dark {
+    background-color: #1a1a2e !important;
 }
 
-.stat-card .stat-number {
-    font-size: 2.5rem;
-    font-weight: 700;
-    color: #2563EB;
+/* Color accents for stat cards */
+.card.border-primary {
+    border-left: 4px solid #4DA8DA !important;
 }
-
-.stat-card .stat-label {
-    font-size: 0.95rem;
-    color: #64748B;
-    margin-top: 0.25rem;
+.card.border-success {
+    border-left: 4px solid #2ecc71 !important;
 }
-
-.stat-card i {
-    font-size: 2rem;
-    color: #2563EB;
-    margin-bottom: 0.5rem;
+.card.border-warning {
+    border-left: 4px solid #f39c12 !important;
+}
+.card.border-danger {
+    border-left: 4px solid #e74c3c !important;
 }
 
 
@@ -167,15 +186,22 @@ body {
 .table {
     border-radius: 8px;
     overflow: hidden;
+    margin-bottom: 0;
 }
 
 .table thead th {
-    background-color: #2563EB;
+    background-color: #1a1a2e;
     color: white;
     border: none;
     font-weight: 600;
-    font-size: 0.9rem;
-    padding: 0.75rem 1rem;
+    font-size: 0.85rem;
+    padding: 0.7rem 0.9rem;
+    text-transform: uppercase;
+    letter-spacing: 0.3px;
+}
+
+.table-dark {
+    background-color: #1a1a2e !important;
 }
 
 .table tbody tr {
@@ -183,12 +209,14 @@ body {
 }
 
 .table tbody tr:hover {
-    background-color: #EFF6FF;
+    background-color: #f0f7ff;
 }
 
 .table td {
     vertical-align: middle;
-    padding: 0.75rem 1rem;
+    padding: 0.65rem 0.9rem;
+    font-size: 0.9rem;
+    border-color: #f0f0f0;
 }
 
 
@@ -196,22 +224,25 @@ body {
    7. FORMS
    ====================================================== */
 
+.form-control,
+.form-select {
+    border-radius: 8px;
+    border: 1.5px solid #ddd;
+    padding: 0.55rem 0.8rem;
+    font-size: 0.9rem;
+}
+
 .form-control:focus,
 .form-select:focus {
-    border-color: #2563EB;
-    box-shadow: 0 0 0 0.2rem rgba(37, 99, 235, 0.15);
+    border-color: #4DA8DA;
+    box-shadow: 0 0 0 0.2rem rgba(77, 168, 218, 0.15);
 }
 
 .form-label {
     font-weight: 500;
-    color: #334155;
-    margin-bottom: 0.35rem;
-}
-
-/* Nice spacing for form groups */
-.mb-3 .form-control,
-.mb-3 .form-select {
-    padding: 0.6rem 0.85rem;
+    color: #444;
+    margin-bottom: 0.3rem;
+    font-size: 0.9rem;
 }
 
 
@@ -219,81 +250,74 @@ body {
    8. BUTTONS
    ====================================================== */
 
-.btn-primary {
-    background: linear-gradient(135deg, #2563EB 0%, #1D4ED8 100%);
-    border: none;
+.btn {
+    border-radius: 8px;
     font-weight: 500;
-    padding: 0.5rem 1.25rem;
-    transition: opacity 0.2s ease, transform 0.15s ease;
+    font-size: 0.9rem;
+    padding: 0.45rem 1rem;
+}
+
+.btn-primary {
+    background-color: #4DA8DA;
+    border-color: #4DA8DA;
 }
 
 .btn-primary:hover {
-    opacity: 0.9;
-    transform: translateY(-1px);
+    background-color: #3d8eb8;
+    border-color: #3d8eb8;
 }
 
 .btn-outline-primary {
-    border-color: #2563EB;
-    color: #2563EB;
-    font-weight: 500;
+    border-color: #4DA8DA;
+    color: #4DA8DA;
 }
 
 .btn-outline-primary:hover {
-    background-color: #2563EB;
-    border-color: #2563EB;
+    background-color: #4DA8DA;
+    border-color: #4DA8DA;
+}
+
+.btn-success {
+    background-color: #2ecc71;
+    border-color: #2ecc71;
+}
+
+.btn-danger {
+    background-color: #e74c3c;
+    border-color: #e74c3c;
+}
+
+.btn-warning {
+    background-color: #f39c12;
+    border-color: #f39c12;
+    color: #fff;
+}
+
+.btn-warning:hover {
+    color: #fff;
+}
+
+.btn-sm {
+    padding: 0.3rem 0.7rem;
+    font-size: 0.8rem;
 }
 
 
 /* ======================================================
-   9. BADGES (status labels)
+   9. BADGES
    ====================================================== */
 
 .badge {
     font-weight: 500;
-    padding: 0.4em 0.7em;
-    font-size: 0.8rem;
-}
-
-/* Custom status badges for rental states */
-.badge-available {
-    background-color: #16A34A;
-    color: white;
-}
-
-.badge-rented {
-    background-color: #F59E0B;
-    color: white;
-}
-
-.badge-overdue {
-    background-color: #DC2626;
-    color: white;
-}
-
-.badge-returned {
-    background-color: #64748B;
-    color: white;
+    padding: 0.35em 0.65em;
+    font-size: 0.78rem;
+    border-radius: 6px;
 }
 
 
 /* ======================================================
    10. PAGE HEADERS
    ====================================================== */
-
-.page-header {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    margin-bottom: 1.5rem;
-    padding-bottom: 0.75rem;
-    border-bottom: 2px solid #E2E8F0;
-}
-
-.page-header h2 {
-    font-weight: 700;
-    color: #1E293B;
-    margin: 0;
-}
 
 
 /* ======================================================
@@ -302,8 +326,9 @@ body {
 
 .alert {
     border: none;
-    border-radius: 8px;
+    border-radius: 10px;
     font-weight: 500;
+    font-size: 0.9rem;
 }
 
 
@@ -311,7 +336,6 @@ body {
    12. MISC / UTILITY
    ====================================================== */
 
-/* Equipment image thumbnails */
 .equipment-img {
     width: 80px;
     height: 80px;
@@ -319,29 +343,112 @@ body {
     border-radius: 8px;
 }
 
-/* Simple hover effect for clickable rows */
 .clickable-row {
     cursor: pointer;
 }
 
-/* Empty state message */
 .empty-state {
     text-align: center;
     padding: 3rem 1rem;
-    color: #94A3B8;
+    color: #999;
 }
 
 .empty-state i {
     font-size: 3rem;
     margin-bottom: 1rem;
+    color: #ccc;
 }
 
-/* Search/filter bar */
 .search-bar {
     max-width: 350px;
 }
 
-/* Smooth transitions for interactive elements */
-a, .btn, .card, .nav-link {
+/* Equipment browse cards */
+.card .card-title {
+    font-size: 1.05rem;
+    font-weight: 600;
+    color: #1a1a2e;
+}
+
+/* Smooth transitions */
+a, .btn, .nav-link {
     transition: all 0.2s ease;
+}
+
+/* Welcome text on dashboards */
+h2.mb-4, h3.mb-4 {
+    color: #1a1a2e;
+}
+
+/* Welcome banner */
+.welcome-banner {
+    background: white;
+    border-radius: 12px;
+    padding: 1.5rem 2rem;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.06);
+    border-left: 4px solid #4DA8DA;
+}
+
+.welcome-banner h2 {
+    color: #1a1a2e;
+    font-size: 1.4rem;
+}
+
+/* Stat cards v2 - icon + number side by side */
+.stat-card-v2 {
+    border-radius: 12px;
+    background: white;
+}
+
+.stat-card-v2:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.1);
+}
+
+.stat-card-v2 h3 {
+    font-size: 1.6rem;
+    color: #1a1a2e;
+}
+
+.stat-icon {
+    width: 50px;
+    height: 50px;
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.3rem;
+    flex-shrink: 0;
+}
+
+.bg-primary-soft {
+    background-color: rgba(77, 168, 218, 0.15);
+    color: #4DA8DA;
+}
+
+.bg-success-soft {
+    background-color: rgba(46, 204, 113, 0.15);
+    color: #2ecc71;
+}
+
+.bg-warning-soft {
+    background-color: rgba(243, 156, 18, 0.15);
+    color: #f39c12;
+}
+
+.bg-danger-soft {
+    background-color: rgba(231, 76, 60, 0.15);
+    color: #e74c3c;
+}
+
+/* Chart containers - keep them compact for laptop screens */
+#rentalStatusChart,
+#categoryChart,
+#myRentalChart {
+    max-height: 200px;
+}
+
+/* Card header rounded top corners */
+.card-header:first-child {
+    border-radius: 12px 12px 0 0;
 }
